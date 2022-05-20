@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
     end = clock();
     duration = (double)(end - start)/CLOCKS_PER_SEC;
     printf("output written to hw2_result.txt.\n");
-    printf("running time : %f seconds\n", duration);
+    printf("running time : %6f seconds\n", duration);
     return 0;
 }
 int ProcessCommand(char buffer[], int *component)
@@ -131,8 +131,8 @@ void PrintHeap(int heap[], int size, int mode){
     FILE* fp;
 
     if (!fileflag)
-        fp = fopen("result.txt", "w");                      //if writing to file for the first time
-    else fp = fopen("result.txt", "a");                     //otherwise append
+        fp = fopen("hw2_result.txt", "w");                      //if writing to file for the first time
+    else fp = fopen("hw2_result.txt", "a");                     //otherwise append
     for(i = 0; i < size; i++)
         PrintArray[i] = heap[i];                            //copied heap into PrintArray
     switch (mode){
